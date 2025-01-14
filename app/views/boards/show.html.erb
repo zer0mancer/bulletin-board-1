@@ -8,7 +8,7 @@
 <h2>Add a new post</h2>
  <form action="/insert_post" method="post">
 <div>
-  <label for="Title">Title</label>
+  <label for="title">Title</label>
   <input type="text" id="title" name="title">
 </div>
 
@@ -18,8 +18,8 @@
 </div>
 
 <div>
-  <label for="date">Expires on</label>
- <input type="date" id="date" name="date">
+  <label for="expires_on">Expires on</label>
+ <input type="date" id="expires_on" name="expires_on">
 </div>
 
  <input type="hidden" id="board_id" name="board_id" value="<%= @the_board.id%>">
@@ -51,4 +51,26 @@
 
 <% end %>
 </table>
-  
+
+<h2>Expired Posts</h2>
+
+<%# matching_posts = Post.where({:expires_on => @the_board.id})%>
+<!--
+<table border="1">
+  <tr>
+    <th>Title</th>
+    <th>Body</th>
+    <th>Posted on</th>
+    <th>Expires on</th>
+  </tr>
+
+<%# matching_posts.each do |a_post| %>-->
+<!--  <tr>
+    <td><%#= a_post.title %></td>
+    <td><%#= a_post.body %></td>
+    <td><%#= a_post.created_at.strftime("%b %e, %Y") %></td>
+    <td><%#= a_post.expires_on.strftime("%b %e, %Y") %></td>
+  </tr>
+
+<%# end %>-->
+<!--</table>-->

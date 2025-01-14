@@ -21,7 +21,7 @@ class PostsController < ApplicationController
     the_post = Post.new
     the_post.title = params.fetch("title")
     the_post.body = params.fetch("body")
-    the_post.expires_on = params.fetch("date")
+    the_post.expires_on = params.fetch("expires_on")
     the_post.board_id = params.fetch("board_id")
 
     if the_post.valid?
